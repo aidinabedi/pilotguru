@@ -45,12 +45,9 @@ public class SensorAndVideoRecorder {
 
     videoFile = new File(recordingDir, "video.mp4");
     videoRecorder.reset();
+    videoRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
     videoRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
-    videoRecorder.setOutputFormat(profile.fileFormat);
-    videoRecorder.setVideoFrameRate(profile.videoFrameRate);
-    videoRecorder.setVideoSize(profile.videoFrameWidth, profile.videoFrameHeight);
-    videoRecorder.setVideoEncodingBitRate(profile.videoBitRate);
-    videoRecorder.setVideoEncoder(profile.videoCodec);
+    videoRecorder.setProfile(profile);
     videoRecorder.setOutputFile(videoFile.getAbsolutePath());
     videoRecorder.setOrientationHint(
         cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION) -

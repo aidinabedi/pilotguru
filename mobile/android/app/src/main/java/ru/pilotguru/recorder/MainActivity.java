@@ -58,9 +58,13 @@ import static ru.pilotguru.recorder.SettingsConstants.PREF_LOG_PRESSURES;
 public class MainActivity extends Activity {
   private static final int REQUEST_ALL_PERMISSIONS = 200;
 
-  private static final String[] necessaryPermissions =
-      {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE,
-          Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.BLUETOOTH};
+  private static final String[] necessaryPermissions = {
+    Manifest.permission.RECORD_AUDIO,
+    Manifest.permission.CAMERA,
+    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+    Manifest.permission.ACCESS_FINE_LOCATION,
+    Manifest.permission.BLUETOOTH
+  };
 
   // UI - video preview panel.
   private TextureView videoPreviewTextureView;
